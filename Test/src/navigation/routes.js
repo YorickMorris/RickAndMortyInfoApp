@@ -30,6 +30,7 @@ const Routes = () => {
                 name="Home"
                 component={Home}
                 options={{
+                    title:'Rick And Morty',
                     headerShown:false,
                 }}
             />
@@ -37,7 +38,7 @@ const Routes = () => {
                 name="Episode"
                 component={EpisodeScreen}
                 options={{
-                    title:'Bölümün adı',
+                    title:'Episode Information',
                     headerStyle:{
                         backgroundColor:'#f00',
                     },
@@ -49,7 +50,7 @@ const Routes = () => {
                 name="Character"
                 component={CharacterScreen}
                 options={{
-                    title:'Karakterin adı',
+                    title:'Character Details',
                     headerStyle:{
                         backgroundColor:'#f00',
                     },

@@ -94,14 +94,14 @@ import {
 
         return(
         <SafeAreaView style={styles.container}> 
-        <View>
-            <Text>{this.state.name}</Text>
-            <Text>{this.state.status}</Text>
-            <Text>{this.state.species}</Text>
-            <Text>{this.state.type}</Text>
-            <Text>{this.state.gender}</Text>
-            <Text>{this.state.origin}</Text>
-            <Text>{this.state.location}</Text>
+        <View style={styles.container}>
+            <Text style={styles.item3}>Character Name: <Text style={styles.item2}>{this.state.name}</Text></Text>
+            <Text style={styles.item3}>Status: <Text style={styles.item2}>{this.state.status}</Text></Text>
+            <Text style={styles.item3}>Species: <Text style={styles.item2}>{this.state.species}</Text></Text>
+            <Text style={styles.item3}>Type: <Text style={styles.item2}>{this.state.type}</Text></Text>
+            <Text style={styles.item3}>Gender: <Text style={styles.item2}>{this.state.gender}</Text></Text>
+            <Text style={styles.item3}>Origin: <Text style={styles.item2}>{this.state.origin}</Text></Text>
+            <Text style={styles.item3}>Location: <Text style={styles.item2}>{this.state.location}</Text></Text>
             
             <Image style={{height:200,width:200}} source={{uri: this.state.image}}/>
            

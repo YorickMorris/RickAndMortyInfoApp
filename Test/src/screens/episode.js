@@ -27,6 +27,7 @@ class Episodes extends React.Component {
             name:null,
             episode:null,
             air_date:null,
+            characterName:null,
         }
     }
     async componentDidMount() {
@@ -37,6 +38,7 @@ class Episodes extends React.Component {
             let name=null;
             let episode=null;
             let air_date=null;
+            let characterName=[];
             if (page != null) {
                 const response = await fetch(page);
                 const responseJson = await response.json();
@@ -47,6 +49,7 @@ class Episodes extends React.Component {
                         const response2 = await fetch(element);
                         const responseJson2 = await response2.json();
                         data2=data2.concat(responseJson2.image);
+                        characterName=characterName.concat(responseJson2.name);
                     })
                     );  
                 }
@@ -66,6 +69,7 @@ class Episodes extends React.Component {
                 name:name,
                 episode:episode,
                 air_date:air_date,
+                characterName:characterName,
             });
 
         } catch (error) {
@@ -88,10 +92,10 @@ class Episodes extends React.Component {
         
             return (
                 <SafeAreaView style={styles.container} >
-                    <View>
-                        <Text >{this.state.episode}</Text>
-                        <Text >{this.state.name}</Text>
-                        <Text >{this.state.air_date}</Text>
+                    <View style={styles.container}>
+                        <Text style={styles.item2}>{this.state.episode}</Text>
+                        <Text style={styles.item2}>Episode Name: {this.state.name}</Text>
+                        <Text style={styles.item2}>Air Date: {this.state.air_date}</Text>
                         <FlatList
                             numColumns={3}
                             columnWrapperStyle={{ justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}
@@ -103,10 +107,14 @@ class Episodes extends React.Component {
                                     this.props.navigation.navigate('Character',this.state.dataSource[index])
                                 }
                                 >
-                                    <View style={styles.item1}>
-                                        <Image style={{height:50,width:50}} source={{uri: ''+item}}/>
-                                        
+                                    <View style={styles.item2}>
+                                        <View style={styles.item1,{width:80,height:100}}>
+                                            <Image style={styles.item1,{height:50,width:50}} source={{uri: ''+item}}/>
+                                            <Text style={styles.item2}>{this.state.characterName[index]}</Text>
+                                        </View>
                                     </View>
+                                      
+                                    
                                 </TouchableOpacity>
                             )}
                             keyExtractor={(item, index) => index}

@@ -3,27 +3,39 @@ import {StyleSheet} from 'react-native';
  export const styles = StyleSheet.create({
     container:{
       flex:1,
-      backgroundColor:'#fff',
+      backgroundColor:'#4e4e4e',
       alignItems:'center',
       justifyContent:'center',
     },
     item1:{
       flex:1,
-      alignSelf:'stretch',
-      margin:10,
       padding:5,
       alignItems:'center',
       justifyContent:'center',
+      color:'#fffdd0',
       borderBottomWidth:1,
-      borderBottomColor: '#eee'
+      borderBottomColor: '#eee',
     },
     touch:{
-      marginTop:20,
-      backgroundColor:'#3498db',
+      marginTop:15,
+      backgroundColor:'#a2a2a2',
       marginHorizontal:5,
-      paddingHorizontal:15,
+      paddingHorizontal:10,
       paddingVertical:5,
       borderRadius:5,
+    },
+    item2:{
+     
+      padding:5,
+      alignItems:'center',
+      justifyContent:'center',
+      color:'#fff',
+    },
+    item3:{
+      color:'#d2d2d2',
+      padding:5,
+      alignItems:'center',
+      justifyContent:'center',
     }
   });
   
